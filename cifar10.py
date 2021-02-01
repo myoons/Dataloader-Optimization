@@ -89,8 +89,7 @@ if __name__ == '__main__':
     train_loader = DataLoader(dataset=train_set,
                               num_workers=4,
                               batch_size=512,
-                              persistent_workers=True,
-                              )
+                              persistent_workers=True)
     print(f"""\n
     Loading Train Dataset Completed / Time : {time() - train_time}
     Length : {len(train_images)}
