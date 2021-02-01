@@ -35,13 +35,13 @@ _**[GPU Util 99% 달성하기](https://ainote.tistory.com/14)**_
 <br/>
 
 
-```
+```python
 from torch.utils.data.dataloader import DataLoader
 
 train_loader = DataLoader(dataset=train_set,
-                              num_workers=4,  # 사용할 Process의 수
-                              batch_size=512,
-                              persistent_workers=True)
+                        num_workers=4,  # 사용할 Process의 수
+                        batch_size=512,
+                        persistent_workers=True)
 ```
 
 <br/>
@@ -120,22 +120,21 @@ _\- Chunk 별로 읽고 쓸 수 있다._
 
 <br/>
 
-```
+```python
 import h5py
 
-celebA = h5py.File(DATA_DIR, 'w', rdcc_nslots=11213, rdcc_nbytes=1024**3, rdcc_w0=1)
+celebA = h5py.File(DATA_DIR, 'w', rdcc_nslots=11213, rdcc_nbytes=1024**3,rdcc_w0=1)
 
 celebA.create_dataset('images',
-                       data=batch_images,
-                       dtype=np.uint8,
-                       chunks=(100, 3, 217, 178),  # 11 MB : Chunk Size
-                       maxshape=(None, 3, 218, 178))
-                                      
+                    data=batch_images,
+                    dtype=np.uint8,
+                    chunks=(100, 3, 217, 178),  # 11 MB : Chunk Size
+                    maxshape=(None, 3, 218, 178))
+                                    
 celebA.create_dataset('labels',
-                       data=labels_h5[:size],
-                       dtype=np.uint8,
-                       chunks=(20000,))
-
+                    data=labels_h5[:size],
+                    dtype=np.uint8,
+                    chunks=(20000,))
 ```
 
 <br/>
