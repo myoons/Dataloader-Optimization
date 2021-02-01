@@ -22,8 +22,6 @@ _**[GPU Util 99% 달성하기](https://ainote.tistory.com/14)**_
 
 ## **사용한 방법들**
 
-<br/>
-
 ### **_1\. Multi Process Data Loading (Prefetch)_**  
 
 <br/>
