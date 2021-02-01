@@ -59,7 +59,7 @@ train_loader = DataLoader(dataset=train_set,
 
 <br/>
 
-Pytorch의 경우 모델의 Parameter은 Float32 Datatype을 가지고 있기에 Input 또한 Float32로 들어가야 한다. 하지만 Float32는 UINT8 (Unsigned Int 8로 0\~255까지의 숫자를 나타낼 수 있다)보다 4배나 그 크기가 크다. **_즉, 단적으로 숫자만 보자면 이는 데이터를 전송할 때 4배만큼의 시간이 더 걸린다는 뜻이다. 따라서 실제로 모델에 Input으로 넣기 전에는 크기가 작은 Datatype으로 가지고 있는 것이 전송 속도에 도움이 된다. _이미지의 경우 0\~255 사이의 UINT8로 가지고 있다가 모델에 넣어주기 직전에 Normalize 하여 Float32로 바꿔주는 것이 더 빠르다는 것이다._**
+Pytorch의 경우 모델의 Parameter은 Float32 Datatype을 가지고 있기에 Input 또한 Float32로 들어가야 한다. 하지만 Float32는 UINT8 (Unsigned Int 8로 0\~255까지의 숫자를 나타낼 수 있다)보다 4배나 그 크기가 크다. **_즉, 단적으로 숫자만 보자면 이는 데이터를 전송할 때 4배만큼의 시간이 더 걸린다는 뜻이다. 따라서 실제로 모델에 Input으로 넣기 전에는 크기가 작은 Datatype으로 가지고 있는 것이 전송 속도에 도움이 된다. 이미지의 경우 0\~255 사이의 UINT8로 가지고 있다가 모델에 넣어주기 직전에 Normalize 하여 Float32로 바꿔주는 것이 더 빠르다는 것이다._**
 
 <br/>
 
